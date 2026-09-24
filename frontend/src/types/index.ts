@@ -1,0 +1,49 @@
+// AI-GENERATED: ChatGPT
+export type Category = {
+  id: number;
+  name: string;
+  description: string;
+};
+
+export type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  image: string | null;
+  category: number;
+  category_name: string;
+  stock: number;
+  created_at: string;
+};
+
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};
+
+export type OrderItem = {
+  id: number;
+  product: number;
+  product_name: string;
+  quantity: number;
+  price: string;
+  subtotal: string;
+};
+
+export type Order = {
+  id: number;
+  name: string;
+  phone: string;
+  address: string;
+  status: string;
+  total_price: string;
+  created_at: string;
+  items: OrderItem[];
+};
+
+export type User = {
+  id: number;
+  username: string;
+  email: string;
+};
