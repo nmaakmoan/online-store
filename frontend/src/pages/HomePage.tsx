@@ -12,7 +12,7 @@ export default function HomePage() {
   const [ordering, setOrdering] = useState("");
 
   useEffect(() => {
-    api.get("/categories/").then((r) => setCategories(r.data));
+    api.get("/categories/").then((r) => setCategories(r.data.results));
   }, []);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function HomePage() {
     if (category) params.set("category", category);
     if (ordering) params.set("ordering", ordering);
 
-    api.get(`/products/?${params.toString()}`).then((r) => setProducts(r.data));
+    api.get(`/products/?${params.toString()}`).then((r) => setProducts(r.data.results));
   }, [search, category, ordering]);
 
   return (

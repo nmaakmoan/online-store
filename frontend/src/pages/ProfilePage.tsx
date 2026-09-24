@@ -14,7 +14,7 @@ export default function ProfilePage() {
       api.get("/orders/"),
     ]).then(([userResponse, ordersResponse]) => {
       setUser(userResponse.data);
-      setOrders(ordersResponse.data);
+      setOrders(ordersResponse.data.results);
     });
   }, []);
 
